@@ -46,10 +46,11 @@ const material2 = new THREE.MeshStandardMaterial({
 
 const earth = new THREE.Mesh(geometry1, material1);
 const moon = new THREE.Mesh(geometry2, material2);
+scene.add(earth);
 
-earth.position.x = -2;
+// earth.position.x = -2;
 moon.position.x = 2;
-scene.add(earth, moon);
+earth.add(moon);
 
 camera.position.z = 5;
 
@@ -63,7 +64,7 @@ function animate() {
   //   earth.rotation.x += 0.01;
   earth.rotation.y += 0.004;
 
-  moon.rotation.y += 0.001;
+  moon.rotation.y += 0.006;
 
   renderer.render(scene, camera);
 }
